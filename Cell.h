@@ -7,16 +7,18 @@ class Cell{
   private:
     sf::Sprite sprite;
     int mineCount;
-    bool hasMine;    
+    bool hasMine;
   public:
-    Cell() = delete;
+    Cell();
     Cell(const Cell&) = delete;
     Cell(int x, int y);
     ~Cell();
 
+    void setPosition(int x, int y);
+    void setSize(int width, int height);
+    void draw(sf::RenderWindow& window) const;
     void flag();
     void checkCell();
-    void setSize();
 };
 
 #endif /*MINESWEEPERCELL_INCLUDED*/

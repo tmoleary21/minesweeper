@@ -6,6 +6,8 @@
 
 class Board{
   private:
+    int xpos;
+    int ypos;
     int width;
     int height;
     int pixelWidth;
@@ -17,7 +19,11 @@ class Board{
     Board(int width, int height, int pixelWidth, int pixelHeight);
     ~Board();
 
-    void clearCells(int x, int y);
+    void initCells();
+    void setPosition(int x, int y);
+    sf::Vector2i getCellDimensions() const;
+    void draw(sf::RenderWindow& window) const;
+    void clearEmptyArea(int x, int y);
 };
 
 #endif /*MINESWEEPERBOARD_INCLUDED*/
