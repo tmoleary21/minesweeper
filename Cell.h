@@ -12,6 +12,7 @@ class Cell{
     Cell() = delete;
     Cell(const Cell&) = delete;
     Cell(int x, int y);
+    ~Cell();
 
     void flag();
     void checkCell();
