@@ -35,6 +35,7 @@ int main(){
 
         window.clear();
         //Draw here
+        
         window.draw(defaultSprite);
         window.draw(emptySprite);
 
