@@ -18,6 +18,8 @@ class Board{
     Cell** boardArray;
 
     void initCellDimensions(); //initialize cell width/height. Also initializes border if necessary (not complete)
+    Cell& getCell(int xpix, int ypix) const; //coordinates in pixels
+    Cell& getCell(int x, int y) const; //coordinates in cells
 
   public:
     Board() = delete;

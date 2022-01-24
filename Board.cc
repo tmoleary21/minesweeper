@@ -55,6 +55,16 @@ sf::Vector2i Board::getCellDimensions() const{
     return sf::Vector2i(cellWidth, cellHeight);
 }
 
+Cell& Board::getCell(int xpix, int ypix) const{
+    int cellPosX = (xpix - xpos) / cellWidth;
+    int cellPosY = (ypix - ypos) / cellHeight;
+    return boardArray[cellPosY][cellPosX];
+}
+
+Cell& Board::getCell(int xcell, int ycell) const{
+    return boardArray[ycell][xcell];
+}
+
 void Board::draw(sf::RenderWindow& window) const{
     for(int i = 0; i < height; i++){
         for(int j = 0; j < width; j++){
@@ -63,8 +73,8 @@ void Board::draw(sf::RenderWindow& window) const{
     }
 }
 
-void checkCell(int x, int y){
-    
+void Board::checkCell(int x, int y){
+    // This next
 }
 
 //When clicking an empty cell with value 0
