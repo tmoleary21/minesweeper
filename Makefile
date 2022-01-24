@@ -5,6 +5,9 @@ CXXFLAGS=-std=c++17 -Wall -Wextra -Wpedantic -Werror -Wfatal-errors -Winit-self 
 minesweeper: main.o Board.o Cell.o
 	$(CXX) $(CXXFLAGS) main.o Board.o Cell.o -o $@ -lsfml-graphics -lsfml-window -lsfml-system 
 
+executable: main.o Board.o Cell.o
+	$(CXX) $(CXXFLAGS) main.o Board.o Cell.o -o minesweeper.exe -lsfml-graphics -lsfml-window -lsfml-system
+
 main.o: main.cc 
 	$(CXX) $(CXXFLAGS) -c main.cc
 

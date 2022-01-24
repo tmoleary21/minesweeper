@@ -7,8 +7,7 @@ using namespace std;
 
 int main(){
 	sf::RenderWindow window(sf::VideoMode(600, 600), "Minesweeper by tmoleary21");
-
-    Cell tempCell;
+    
     Cell::initCellTextures();
     Board board(10,10,600,600);
     board.setPosition(0,0);
