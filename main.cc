@@ -7,10 +7,10 @@ using namespace std;
 
 int main(){
 	sf::RenderWindow window(sf::VideoMode(600, 600), "Minesweeper by tmoleary21");
-    
+
     Cell::initCellTextures();
-    Board board(10,10,600,600);
-    board.setPosition(0,0);
+    Board board(8,5,600,500);
+    board.setPosition(0,100);
 
     while (window.isOpen())
     {
@@ -19,6 +19,12 @@ int main(){
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+            
+            if(event.type == sf::Event::MouseButtonPressed){
+                if(event.mouseButton.button == sf::Mouse::Left){
+                    board.checkCell(event.mouseButton.x, event.mouseButton.y);
+                }
+            }
         }
 
         window.clear();

@@ -6,13 +6,19 @@
 
 class Board{
   private:
-    int xpos;
+    int xpos; //Position of top right corner of game board (mine field)
     int ypos;
-    int width;
+    int width; //Width/Height of game board in cells
     int height;
-    int pixelWidth;
+    int pixelWidth; //Width/Height of game board in pixels
     int pixelHeight;
+
+    int cellWidth; //Width/Height of each individual cell
+    int cellHeight; //TODO: These should always be the same value (squares). Should eliminate need for both
     Cell** boardArray;
+
+    void initCellDimensions(); //initialize cell width/height. Also initializes border if necessary (not complete)
+
   public:
     Board() = delete;
     Board(const Board&) = delete;
@@ -23,6 +29,7 @@ class Board{
     void setPosition(int x, int y);
     sf::Vector2i getCellDimensions() const;
     void draw(sf::RenderWindow& window) const;
+    void checkCell(int x, int y);
     void clearEmptyArea(int x, int y);
 };
 
